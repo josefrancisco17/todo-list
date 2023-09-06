@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %> 
+
+<h1 class="title">To Do List</h1>
+
+<div class="list">
+    <ul>
+        <li>
+            <input type="checkbox">
+            <label> Task 1</label><br>
+        </li>
+        <li>
+            <input type="checkbox">
+            <label> Task 2</label><br>
+        </li>
+        <li>
+            <input type="checkbox">
+            <label> Task 3</label><br>
+        </li>
+        <% for (var i = 0; i < locals.listlength; i++) { %> 
+            <li>
+                <input type="checkbox">
+                <label> <%=locals.list[i]%> </label><br>
+            </li>
+        <% } %> 
+    </ul>
+    <br>
+    <form action="/" method="post">
+        <input type="text" name="text" placeholder="write here"> 
+        <input type="submit" name="item" placeholde="add">
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %> 
