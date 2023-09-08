@@ -4,13 +4,13 @@ import bodyParser from "body-parser"
 let app = express()
 const port = 3000
 
-app.use(express.static("static"))
+app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let list = []
 
 app.get("/", (req,res) => {
-    res.render("index.ejs")
+    res.render("index.ejs")                                                     
 })
 
 app.post("/", (req,res) => {
@@ -21,3 +21,4 @@ app.post("/", (req,res) => {
 app.listen(port, function() {
     console.log("[INFO] Server is up and running in port " + port)
 })
+
